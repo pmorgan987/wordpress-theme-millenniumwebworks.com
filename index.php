@@ -50,14 +50,36 @@
     <div class="container">
       <h1 class="text-center my-3">Our Recent Work</h1>
 
+      <?php
+        $args = array(
+          'post_type' => 'portfolio',
+          'posts_per_page' => -1,
+          'post_status' => 'publish',
+          'orderby' => 'menu_order',
+          'order' => 'ASC'
+        );
+
+        $posts = get_posts($args);
+        $featured_images = array();
+        $featured_titles = array();
+
+        foreach($posts as $post) {
+          $featured_images[] = get_the_post_thumbnail_url($post->ID, 'large');
+          $featured_titles[] = $post->post_title;
+        }
+      ?>
+
       <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner" class="mx-auto">
-          <div class="carousel-item active">
-            <img src="<?php bloginfo('template_url'); ?>/images/recent1.png" class="img img-fluid d-block mx-auto" alt="Richmond Hill Martial Arts">
+          <?php
+          foreach ($featured_images as $key => $image) {
+          ?>
+          <div class="carousel-item<?php if ($key == 0) echo ' active'; ?>">
+            <img src="<?php echo $featured_images[$key]; ?>" class="img img-fluid d-block mx-auto" alt="<?php echo $featured_titles[$key]; ?> Site Screenshot">
           </div>
-          <div class="carousel-item">
-            <img src="<?php bloginfo('template_url'); ?>/images/recent2.png" class="img img-fluid d-block mx-auto" alt="Reflexology Inc.">
-          </div>
+          <?php
+          }
+          ?>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
