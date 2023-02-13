@@ -29,19 +29,18 @@ add_action ('wp_enqueue_scripts','wpse271934_add_styles');
 function wpse271934_add_styles () {
   global $post;
   $extra_styling = '';
-    if (is_page() || is_single ()) {
+  //if (is_page() || 'portfolio' != get_post_type()) {
+  if (is_page()) {
     $image = get_the_post_thumbnail_url($post->ID,'large');
     
-    if (!empty($image))
+    if (!empty($image)) {
       $extra_styling .= '#page-main {background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('.$image.');}';
-      //$extra_styling .= '#page-main {background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url('.$image.');}';
     }
-
-
+      
+  }
 
 
   // assuming style.css has the handle 'main_style' in your theme
-  //$extra_styling = '#page-main { display: none; }';
   wp_add_inline_style('main_style', $extra_styling);
 }
 

@@ -1,4 +1,4 @@
-<footer class="bg-dark text-white pt-5 pb-2 px-5">
+<!-- <footer class="bg-dark text-white pt-5 pb-2 px-5">
     <div class="container">
       <div class="row">
         <div class="col-md-4">
@@ -17,6 +17,12 @@
       <div class="text-center mt-5">
         <small>Copyright &copy; <?php echo date('Y'); ?> Millennium Web Works.  All Rights Reserved.</small>
       </div>
+    </div>
+  </footer> -->
+
+  <footer class="bg-dark text-white">
+    <div class="text-center py-5">
+      <small>Copyright &copy; <?php echo date('Y'); ?> Millennium Web Works.  All Rights Reserved.</small>
     </div>
   </footer>
 
