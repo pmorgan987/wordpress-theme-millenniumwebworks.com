@@ -29,12 +29,11 @@ add_action ('wp_enqueue_scripts','wpse271934_add_styles');
 function wpse271934_add_styles () {
   global $post;
   $extra_styling = '';
-  //if (is_page() || 'portfolio' != get_post_type()) {
   if (is_page()) {
     $image = get_the_post_thumbnail_url($post->ID,'large');
     
     if (!empty($image)) {
-      $extra_styling .= '#page-main {background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('.$image.');}';
+      $extra_styling .= '#page-main {background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('.$image.');}';
     }
       
   }
@@ -85,6 +84,7 @@ function create_posttype_portfolio() {
       'exclude_from_search' => false,
       // 'publicly_queryable'  => true,
       'capability_type'     => 'page',
+      'show_in_rest'        => true,
   );
    
   // Registering your Custom Post Type
@@ -93,4 +93,11 @@ function create_posttype_portfolio() {
 // Hooking up our function to theme setup
 add_action( 'init', 'create_posttype_portfolio' );
 
+// Prevent WP from adding <p> tags on all post types
+function disable_wp_auto_p( $content ) {
+  remove_filter( 'the_content', 'wpautop' );
+  remove_filter( 'the_excerpt', 'wpautop' );
+  return $content;
+}
+add_filter( 'the_content', 'disable_wp_auto_p', 0 );
 ?>

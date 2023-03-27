@@ -6,7 +6,7 @@
         <h1 class="m-5">Your One Stop Development Partner</h1>
         <p>Welcome to Millennium Web Works, a full service website development company.  We have been in business for over 10 years and can help bring your ideas to light!</p>
         <p>Contact Us today to learn more!</p>
-        <a href="#" class="btn btn-success btn-lg m-5">Free Consultation</a>
+        <a href="/support" class="btn btn-success btn-lg m-5">Free Consultation</a>
       </section>
     </div>
   </section>

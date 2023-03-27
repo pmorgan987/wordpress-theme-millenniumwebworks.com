@@ -11770,11 +11770,9 @@ fieldset:disabled .btn {
 nav img {
   width: 200px;
 }
-
 nav .nav-link {
   color: #000;
 }
-
 nav .nav-link:hover,
 nav .nav-link:focus {
   color: #198754;
@@ -11788,23 +11786,11 @@ nav .nav-link:focus {
   background-size: cover;
   background-position: right center;
 }
-
 #showcase h1,
 #showcase .h1,
 #showcase p {
   color: white;
   text-shadow: 1px 1px #000;
-}
-
-#showcase h1,
-#showcase .h1 {
-  text-transform: uppercase;
-  word-spacing: 0.1em;
-}
-
-#showcase h1,
-#showcase .h1,
-#showcase p {
   -webkit-animation: showcase-load-up 500ms ease-in forwards;
   animation: showcase-load-up 500ms ease-in forwards;
   opacity: 0;
@@ -11812,11 +11798,14 @@ nav .nav-link:focus {
 
 #showcase h1,
 #showcase .h1 {
+  text-transform: uppercase;
+  word-spacing: 0.1em;
   -webkit-animation-delay: 500ms;
   animation-delay: 500ms;
 }
 
 #showcase p {
+  font-size: 1.25em;
   -webkit-animation-delay: 1500ms;
   animation-delay: 1500ms;
 }
@@ -11950,6 +11939,7 @@ main {
 #page-main p {
   margin-top: 2em;
   margin-bottom: 0;
+  font-size: 1.25em;
 }
 
 /*** PORTFOLIO ***/
@@ -11978,4 +11968,21 @@ main {
 }
 .portfolio__grid a {
   color: #fff;
+}
+
+ul.checkmarks {
+  padding: 0;
+}
+ul.checkmarks li {
+  list-style-type: none;
+  font-size: 0.85em;
+  margin-top: 1em;
+}
+ul.checkmarks li:before {
+  content: "✓";
+  font-weight: 700;
+  margin-right: 0.35em;
+}
+ul.two-cols {
+  columns: 2;
 }
