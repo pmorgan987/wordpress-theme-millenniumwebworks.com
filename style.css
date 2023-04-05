@@ -1,9 +1,9 @@
 /*
 Theme Name: Millennium Web Works Theme
 Theme URI: https://www.millenniumwebworks.com
-Author: Patrick Morgan on behalf of Millennium Web Works
-Author URI: https://www.millenniumwebworks.com
-Description: Theme for Millennium Web Works 2021 site
+Author: Patrick Morgan
+Author URI: https://www.patrick-morgan.com
+Description: Theme for Millennium Web Works site
 Version: 1.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -11986,3 +11986,21 @@ ul.checkmarks li:before {
 ul.two-cols {
   columns: 2;
 }
+
+/* Start Contact Form Styles */
+.wpcf7-form {
+  /* border: 1px solid blue; */
+}
+.wpcf7-form label {
+  width: 100%;
+}
+.wpcf7-form input,
+.wpcf7-form textarea {
+  background-color: transparent;
+  border: 1px solid #666;
+  border-radius: 5px;
+  color: inherit;
+  padding: 0.35em;
+  width: 100%;
+}
+/* End Contact Form Styles */
